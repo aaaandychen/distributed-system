@@ -15,6 +15,7 @@ import java.util.*;
 import static cn.andychen.Constants.*;
 import static cn.andychen.Constants.AppType.AppType_INDEXER;
 import static cn.andychen.Constants.AppType.AppType_WC;
+import static cn.andychen.mr.Worker.loadPlugin;
 import static java.nio.file.StandardOpenOption.APPEND;
 
 /**
@@ -90,18 +91,4 @@ public class SequentialMapReduce {
         System.out.println("处理结束...");
     }
 
-    /*
-    自定义mrapp流程：在mrapps.Constants.AppType中新增类型，然后在mrapps/impl中新增一个IWorker的实现类
-     */
-    public static IWorker loadPlugin(String workType) {
-        switch (workType) {
-            case AppType_WC:
-                return new WordCounter();
-            case AppType_INDEXER:
-                return new Indexer();
-            default:
-                return null;
-        }
-
-    }
 }
