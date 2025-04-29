@@ -13,8 +13,13 @@ import static cn.andychen.Constants.AppType.AppType_WC;
  * @Description 工作节点
  */
 public class Worker {
+    private IWorker worker;
     public static void main(String[] args) {
 
+    }
+
+    public Worker(String worker) {
+        this.worker = loadPlugin(worker);
     }
 
     // hash来指向对应reduce

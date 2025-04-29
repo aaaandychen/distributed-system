@@ -26,6 +26,7 @@ public class Master {
 
     public Boolean Done(){
         // todo:这里需要阶段性地查看是否完成job
+        System.out.println("checking if is done...");
         return true;
     }
 
