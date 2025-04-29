@@ -12,12 +12,6 @@ rm -f mr-*
 # 编译文件
 javac -encoding UTF-8 -d . $(find ../../../../..//main/java/cn/andychen -name "*.java")
 
-## 复制所有 .txt 文件到对应目录
-#find ../../../../../main/java/cn/andychen -name "*.txt" | while read filepath; do
-#    # 拷贝文件
-#    cp "$filepath" "./cn/andychen/demos"
-#done
-pwd
 java -Dfile.encoding=UTF-8 -cp . cn.andychen.demos.SequentialMapReduce word_counter pg-tom_sawyer.txt
 
 

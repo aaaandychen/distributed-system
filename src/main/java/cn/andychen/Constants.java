@@ -10,7 +10,8 @@ import java.nio.file.Paths;
  * @Description mapreduce类型
  */
 public class Constants {
-    public static final String ROOT_PATH = "./src/main/java/cn/andychen/";
+    public static final String ROOT_PATH = "D:/Projects/distributed-system/src/main/java/cn/andychen/";
+    public static final String DATA_PATH = "D:/Projects/distributed-system/data/";
     public static final String SEP = " ";
     public static final String EOL = "\n";
     public class AppType{

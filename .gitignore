@@ -38,3 +38,4 @@ build/
 .DS_Store
 /output.txt
 /mr-out-0
+/src/test/java/cn/andychen/mr-tmp/cn/andychen/
