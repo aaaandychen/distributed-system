@@ -27,8 +27,8 @@ public class Worker {
         return key.hashCode() & 0x7fffffff;
     }
 
-    // mrworker调用
-    public void Worker(IWorker worker){
+    // 主进程启动worker
+    public void work(IWorker worker){
 
     }
 
