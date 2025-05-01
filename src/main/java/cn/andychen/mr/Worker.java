@@ -32,10 +32,13 @@ public class Worker {
 
     }
 
-    private boolean call(Object args,Object response,String rpcName){
+    // 提供外部调用，通过rpc访问Master
+    public boolean callMaster(Object args,Object response,String rpcName){
         return false;
     }
 
+    // 具体调用逻辑
+    private void doCall(){}
 
     /*
     自定义mrapp流程：在mrapps.Constants.AppType中新增类型，然后在mrapps/impl中新增一个IWorker的实现类
