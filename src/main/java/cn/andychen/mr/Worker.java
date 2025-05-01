@@ -27,15 +27,18 @@ public class Worker {
         return key.hashCode() & 0x7fffffff;
     }
 
-    // mrworker调用
-    public void Worker(IWorker worker){
+    // 主进程启动worker
+    public void work(IWorker worker){
 
     }
 
-    private boolean call(Object args,Object response,String rpcName){
+    // 提供外部调用，通过rpc访问Master
+    public boolean callMaster(Object args,Object response,String rpcName){
         return false;
     }
 
+    // 具体调用逻辑
+    private void doCall(){}
 
     /*
     自定义mrapp流程：在mrapps.Constants.AppType中新增类型，然后在mrapps/impl中新增一个IWorker的实现类
