@@ -1,7 +1,9 @@
 package cn.andychen.helloworld;
 
-import helloworld.HelloProto;
-import helloworld.HelloServiceGrpc;
+
+import cn.andychen.grpc.HelloReply;
+import cn.andychen.grpc.HelloRequest;
+import cn.andychen.grpc.HelloServiceGrpc;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
@@ -18,7 +20,7 @@ public class HelloClient {
 
         HelloServiceGrpc.HelloServiceBlockingStub stub = HelloServiceGrpc.newBlockingStub(channel);
 
-        HelloProto.HelloReply response = stub.sayHello(HelloProto.HelloRequest.newBuilder().setName("Changyi").build());
+        HelloReply response = stub.sayHello(HelloRequest.newBuilder().setName("Zhenyang").build());
         System.out.println("Received: " + response.getMessage());
 
         channel.shutdown();

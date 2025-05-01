@@ -1,7 +1,8 @@
 package cn.andychen.helloworld;
 
-import helloworld.HelloProto;
-import helloworld.HelloServiceGrpc;
+import cn.andychen.grpc.HelloReply;
+import cn.andychen.grpc.HelloRequest;
+import cn.andychen.grpc.HelloServiceGrpc;
 import io.grpc.Server;
 import io.grpc.ServerBuilder;
 import io.grpc.stub.StreamObserver;
@@ -24,9 +25,9 @@ public class HelloServer {
     }
 
     static class HelloServiceImpl extends HelloServiceGrpc.HelloServiceImplBase {
-        public void sayHello(HelloProto.HelloRequest req, StreamObserver<HelloProto.HelloReply> responseObserver) {
+        public void sayHello(HelloRequest req, StreamObserver<HelloReply> responseObserver) {
             String message = "Hello, " + req.getName();
-            HelloProto.HelloReply reply = HelloProto.HelloReply.newBuilder().setMessage(message).build();
+            HelloReply reply = HelloReply.newBuilder().setMessage(message).build();
             responseObserver.onNext(reply);
             responseObserver.onCompleted();
         }
