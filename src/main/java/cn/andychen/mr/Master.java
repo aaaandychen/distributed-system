@@ -7,8 +7,21 @@ package cn.andychen.mr;
  */
 public class Master {
 
-    // 示例启动一个Master节点
     public static void main(String[] args) throws InterruptedException {
+        StartMRMaster(args);
+    }
+
+    /*
+    // 启动一个Master节点
+    1. 维护工作线程列表，并需要定时任务发心跳包
+        1.1 若失败，则需要通知所有其他工作线程，将任务转移到新的工作线程
+        1.2 所有工作线程的reduce工作需要根据已经读取的文件判断是否重做
+    2. 监听端口，接收rpc请求
+        2.1 新接入的worker注册
+        2.2 如果有，接收工作完成信息并提供新工作
+        2.3 如果有性能差的节点，则将任务分配给别的进程，如果其中之一完成则通知其他进程
+     */
+    public static void StartMRMaster(String[] args) throws InterruptedException {
         if(args.length < 1){
             System.out.println("error");
             return;
@@ -25,7 +38,7 @@ public class Master {
     }
 
     public Boolean Done(){
-        // todo:这里需要阶段性地查看是否完成job
+        // todo:这里需要阶段性地查看是否完成job，其实就是我们需要的定时任务
         System.out.println("checking if is done...");
         return true;
     }
@@ -33,7 +46,7 @@ public class Master {
     // 由程序入口调用，nReduce是Reduce线程的数量
     public static Master MakeMaster(String[] files, int nReduce){
         Master master = new Master();
-        // todo
+        // todo：初始化
 
         master.server();
         return master;

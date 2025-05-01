@@ -1,9 +1,8 @@
 package cn.andychen.mrapps.impl;
 
 import cn.andychen.mr.KeyValue;
-import cn.andychen.mrapps.IWorker;
+import cn.andychen.mrapps.IMethod;
 
-import java.security.Key;
 import java.util.ArrayList;
 
 /**
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  * @Date 2025/4/27 22:10
  * @Description
  */
-public class WordCounter implements IWorker {
+public class WordCounter implements IMethod {
     @Override
     public KeyValue[] map(String filename, String content) {
         String[] splits = content.split("[^a-zA-Z]+");

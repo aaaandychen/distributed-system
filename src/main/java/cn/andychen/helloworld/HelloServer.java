@@ -15,7 +15,7 @@ import io.grpc.stub.StreamObserver;
 public class HelloServer {
 
     public static void main(String[] args) throws Exception {
-        Server server = ServerBuilder.forPort(50051)
+        Server server = ServerBuilder.forPort(5005)
                 .addService(new HelloServiceImpl())
                 .build()
                 .start();

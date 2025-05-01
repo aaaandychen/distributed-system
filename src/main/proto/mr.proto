@@ -1,0 +1,35 @@
+syntax = "proto3";
+option java_package = "cn.andychen.mr.rpc";
+option java_multiple_files = false;
+
+service WorkerService{
+  rpc GetFile (FileRequest) returns (FileResponse);
+  rpc NotifyJob (JobRequest) returns (JobResponse);
+}
+
+service MasterService{
+  rpc DispatchTask (MasterRequest) returns (MasterResponse);
+}
+
+message FileRequest{
+
+}
+
+message FileResponse{
+
+}
+
+message JobRequest{
+
+}
+
+message JobResponse{
+
+}
+message MasterRequest{
+
+}
+
+message MasterResponse{
+
+}

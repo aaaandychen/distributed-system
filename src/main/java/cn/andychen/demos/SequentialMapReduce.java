@@ -1,11 +1,8 @@
 package cn.andychen.demos;
 
 import cn.andychen.mr.KeyValue;
-import cn.andychen.mrapps.IWorker;
-import cn.andychen.mrapps.impl.Indexer;
-import cn.andychen.mrapps.impl.WordCounter;
+import cn.andychen.mrapps.IMethod;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -14,8 +11,6 @@ import java.nio.file.Paths;
 import java.util.*;
 
 import static cn.andychen.Constants.*;
-import static cn.andychen.Constants.AppType.AppType_INDEXER;
-import static cn.andychen.Constants.AppType.AppType_WC;
 import static cn.andychen.mr.Worker.loadPlugin;
 import static java.nio.file.StandardOpenOption.APPEND;
 
@@ -34,7 +29,7 @@ public class SequentialMapReduce {
             throw new Exception("输入参数错误");
         }
 
-        IWorker worker = loadPlugin(args[0]);
+        IMethod worker = loadPlugin(args[0]);
         if (worker == null) {
             System.out.println("不存在该worker！");
             return;

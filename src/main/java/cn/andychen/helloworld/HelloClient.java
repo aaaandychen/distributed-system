@@ -14,7 +14,7 @@ import io.grpc.ManagedChannelBuilder;
  */
 public class HelloClient {
     public static void main(String[] args) {
-        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+        ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 5005)
                 .usePlaintext()
                 .build();
 
