@@ -27,9 +27,17 @@ message JobResponse{
 
 }
 message MasterRequest{
-
+  int64 word_id = 1;
+  string source = 2;
+  int64 commit_job_id = 3;
+  string cachePath = 4;
 }
 
 message MasterResponse{
-
+  int64 work_id = 1;
+  uint32 accepted = 2;
+  int64 new_job_id = 3;
+  uint32 job_type = 4;
+  string job_file = 5;
+  string target_workers = 6;
 }
